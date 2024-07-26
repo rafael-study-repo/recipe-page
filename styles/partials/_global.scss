@@ -1,0 +1,115 @@
+@use "typography" as *;
+@use "variables" as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Outfit", sans-serif;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+  color: $stone-900;
+}
+
+h1,
+h2 {
+  font-family: "YoungSerif", serif;
+}
+
+h1 {
+  @extend %text-preset-1;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  margin-bottom: 1rem;
+  font-size: 1.75rem;
+  color: $brown-800;
+}
+
+p,
+li {
+  @extend %text-preset-3;
+}
+
+hr {
+  border: 0.0313rem solid $stone-150;
+}
+
+ul,
+ol {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+li {
+  padding-left: 1.75rem;
+  margin-left: 0.75rem;
+  &::marker {
+    color: $stone-900;
+    font-weight: 700;
+    width: 1.5rem;
+    margin-left: 0.25rem;
+  }
+}
+
+ul li {
+  &::marker {
+    content: "\2022";
+    color: $rose-800;
+  }
+}
+
+ol li {
+  margin-left: 1.25rem;
+  padding-left: 1.25rem;
+  &::marker {
+    font-family: "Outfit ", sans-serif;
+  }
+}
+
+span {
+  font-weight: 700;
+}
+
+body {
+  min-height: 100vh;
+  background-color: $stone-100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

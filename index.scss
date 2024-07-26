@@ -1,0 +1,93 @@
+@use "styles/partials/variables" as *;
+@use "styles/partials/typography" as *;
+@use "styles/partials/global" as *;
+
+.recipe {
+  background-color: $white;
+  max-width: 45rem;
+  margin: clamp(0.1rem, 5vw, 6rem) auto;
+  border-radius: 20px;
+
+  &__image {
+    border-radius: 2.5rem;
+    padding: 2rem;
+  }
+
+  &__content {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.prep {
+  background-color: $rose-50;
+  padding: 1.5rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  &__title {
+    color: $rose-800;
+    font-size: 1.25rem;
+    font-family: "Outfit", sans-serif;
+    font-weight: 700;
+    margin-bottom: 0;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+
+.nutrition {
+  &__description {
+    margin-bottom: 0.5rem;
+  }
+
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1rem 1.5rem;
+
+    border-bottom: 1px solid $stone-150;
+    &:last-child {
+      border: none;
+    }
+  }
+
+  &__value {
+    font-weight: 700;
+    color: $brown-800;
+  }
+}
+
+@media (max-width: 500px) {
+  .recipe {
+    margin: 0;
+    border-radius: 0;
+    padding: 0;
+
+    &__image {
+      border-radius: 0;
+      padding: 0;
+    }
+  }
+}
+
+.attribution {
+  font-size: 0.6875rem;
+  text-align: center;
+
+  a {
+    color: hsl(228, 45%, 44%);
+  }
+}
