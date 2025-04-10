@@ -1,0 +1,251 @@
+/* ==================== */
+/* # General Settings # */
+/* ==================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Young+Serif&display=swap");
+
+:root {
+  --color-brown-800: hsl(14, 45%, 36%);
+
+  --color-rose-800: hsl(332, 51%, 32%);
+  --color-rose-50: hsl(330, 100%, 98%);
+
+  --color-stone-100: hsl(30, 54%, 90%);
+  --color-stone-150: hsl(30, 18%, 87%);
+  --color-stone-600: hsl(30, 10%, 34%);
+  --color-stone-900: hsl(24, 5%, 18%);
+
+  --color-white: hsl(0, 0%, 100%);
+}
+
+body {
+  /* Typography */
+  font-family: "Outfit", sans-serif;
+  font-size: clamp(1rem, 0.376vw + 0.912rem, 1.25rem);
+  line-height: 1.5;
+
+  /* Visual */
+  background-color: var(--color-stone-100);
+  color: var(--color-stone-600);
+
+  /* Misc */
+  transition: padding 0.5s ease-in-out;
+}
+
+ul {
+  /* Box model */
+  padding-inline: 0.3em;
+
+  /* Misc */
+  list-style-type: none;
+}
+
+ul li {
+  /* Box model */
+  align-items: center;
+  display: flex;
+  gap: 1.65em;
+}
+
+ul li::before {
+  /* Typography */
+  font-size: 1.5rem;
+
+  /* Misc */
+  content: "•";
+}
+
+ol {
+  /* Box model */
+  padding-inline-start: 1.5em;
+}
+
+ol li {
+  /* Box model */
+  padding-inline-start: 0.875em;
+}
+
+h1,
+h2 {
+  /* Box model */
+  margin-block-end: 0.875em;
+
+  /* Typography */
+  font-family: "Young Serif", serif;
+}
+
+section {
+  /* Box model */
+  padding-block: 2em;
+}
+
+table {
+  /* Box model */
+  width: 100%;
+
+  /* Typography */
+  text-align: left;
+
+  /* Misc */
+  border-collapse: collapse;
+}
+
+/* ============== */
+/* # Simple Reset */
+/* ============== */
+
+* {
+  /* Box model */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ==================== */
+/* # Recipe Component # */
+/* ==================== */
+
+.recipe {
+  /* Box model */
+  padding-inline: 2em;
+
+  /* Visual */
+  background-color: var(--color-white);
+
+  /* transition: padding 1s ease-in-out; */
+}
+
+.recipe__image {
+  /* Box model */
+  display: block;
+  margin-block-end: 3em;
+  margin-inline: -2em;
+  max-width: calc(100% + (2em * 2));
+}
+
+.recipe__title {
+  /* Typography */
+  font-size: clamp(2rem, 1.502vw + 1.648rem, 3rem);
+  font-weight: 500;
+  line-height: 1.1;
+
+  /* Visual */
+  color: var(--color-stone-900);
+}
+
+.recipe__description {
+  /* Box model */
+  margin-block-end: 2em;
+}
+
+.recipe__subtitle {
+  /* Typography */
+  font-size: clamp(1.7rem, 0.451vw + 1.594rem, 2rem);
+  font-weight: 500;
+}
+
+/* ====================== */
+/* ## Preparation Time ## */
+/* ====================== */
+
+.recipe__prep-time {
+  /* Box model */
+  padding: 1.5em;
+
+  /* Visual */
+  background-color: var(--color-rose-50);
+  border-radius: 0.625em;
+}
+
+.recipe__prep-time-title {
+  /* Box model */
+  margin-block-end: 0.865em;
+
+  /* Typography */
+  font-family: "Outfit", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.recipe__prep-time-title,
+.recipe__prep-time-item::before {
+  /* Visual */
+  color: var(--color-rose-800);
+}
+
+/* ============== */
+/* ## Sections ## */
+/* ============== */
+
+.recipe__nutrition-row {
+  /* Box model */
+  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding-block: 1em;
+}
+
+.recipe__nutrition-term {
+  /* Box model */
+  padding-inline-start: 2em;
+
+  /* Typography */
+  font-weight: 400;
+}
+
+.recipe__nutrition-value {
+  /* Box model */
+  padding-inline-start: 0.625em;
+}
+
+.recipe__instructions-item {
+  margin-block-end: 0.825em;
+}
+
+.recipe__ingredients,
+.recipe__instructions,
+.recipe__nutrition-row:not(:last-of-type) {
+  /* Visual */
+  border-block-end: 0.0625rem solid var(--color-stone-150);
+}
+
+.recipe__subtitle,
+.recipe__ingredients-item::before,
+.recipe__instructions-item::marker,
+.recipe__nutrition-value {
+  /* Visual */
+  color: var(--color-brown-800);
+}
+
+.recipe__instructions-item::marker,
+.recipe__nutrition-value {
+  /* Typography */
+  font-weight: 700;
+}
+
+/* ================= */
+/* # Media Queries # */
+/* ================= */
+@media (min-width: 82em) {
+  body {
+    /* Box model */
+    padding: 5em 13em;
+  }
+
+  .recipe {
+    /* Box model */
+    padding-block-start: 2em;
+
+    /* Visual */
+    border-radius: 2em;
+  }
+
+  .recipe__image {
+    /* Box model */
+    margin-inline: 0;
+    max-width: 100%;
+
+    /* Visual */
+    border-radius: 1.25em;
+  }
+}
