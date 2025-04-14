@@ -27,9 +27,6 @@ body {
   /* Visual */
   background-color: var(--color-stone-100);
   color: var(--color-stone-600);
-
-  /* Misc */
-  transition: padding 0.5s ease-in-out;
 }
 
 ul {
@@ -106,21 +103,15 @@ table {
 /* ==================== */
 
 .recipe {
-  /* Box model */
-  padding-inline: 2em;
-
   /* Visual */
   background-color: var(--color-white);
-
-  /* transition: padding 1s ease-in-out; */
 }
 
 .recipe__image {
   /* Box model */
   display: block;
   margin-block-end: 3em;
-  margin-inline: -2em;
-  max-width: calc(100% + (2em * 2));
+  max-width: 100%;
 }
 
 .recipe__title {
@@ -142,6 +133,12 @@ table {
   /* Typography */
   font-size: clamp(1.7rem, 0.451vw + 1.594rem, 2rem);
   font-weight: 500;
+}
+
+.recipe__header-content,
+.recipe__content {
+  /* Box model */
+  padding-inline: 2em;
 }
 
 /* ====================== */
@@ -238,6 +235,11 @@ table {
 
     /* Visual */
     border-radius: 2em;
+  }
+
+  .recipe__image-container {
+    /* Box model */
+    padding-inline: 2em;
   }
 
   .recipe__image {
